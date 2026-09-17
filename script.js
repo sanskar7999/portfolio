@@ -21,7 +21,7 @@ document.addEventListener('keydown', event => {
 document.addEventListener('click', event => {
   if (!event.target.closest('.site-header')) closeMenu();
 });
-window.matchMedia('(min-width: 621px)').addEventListener('change', closeMenu);
+window.matchMedia('(min-width: 681px)').addEventListener('change', closeMenu);
 document.querySelector('.copy-email').addEventListener('click', async () => {
   const status = document.querySelector('.copy-status');
   try {
