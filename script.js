@@ -32,6 +32,17 @@ document.querySelector('.copy-email').addEventListener('click', async () => {
     status.textContent = 'Email: sanskarsahu747@gmail.com — select the address to copy it.';
   }
 });
+
+const testimonials = document.querySelector('.testimonials');
+const scrollTestimonials = direction => {
+  const card = testimonials.querySelector('.testimonial');
+  if (!card) return;
+  const gap = Number.parseFloat(getComputedStyle(testimonials).gap) || 0;
+  testimonials.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+};
+document.querySelector('.testimonial-prev').addEventListener('click', () => scrollTestimonials(-1));
+document.querySelector('.testimonial-next').addEventListener('click', () => scrollTestimonials(1));
+
 if ('IntersectionObserver' in window) {
   const navLinks = [...navigation.querySelectorAll('a')];
   const observer = new IntersectionObserver(entries => {
